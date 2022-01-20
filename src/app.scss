@@ -1,0 +1,135 @@
+@import "./global.scss";
+
+.App {
+  text-align: center;
+  display: flex;
+  background-color: rgb(68, 13, 63);
+  overflow: hidden;
+  max-height: 100vh;
+
+  .imgs{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-size: 120%;
+    background-position: 50% 35%;
+    //background-image: url("./assets/rayos.png"), linear-gradient(to bottom left, rgba(238, 34, 153, 0.596) ,rgba(94, 13, 83, 0.719), rgba(223, 167, 46, 0.616));
+    background-image: url("./assets/rayos.png"), 
+    radial-gradient(farthest-side at top right,rgba(238, 34, 153, 0.945),rgb(59, 7, 52), transparent),
+    radial-gradient(farthest-side at bottom left,rgba(255, 255, 0, 0.87),rgb(59, 7, 52), transparent);
+
+    @include mobile{
+      
+      background-image: url("./assets/rayos.png"), 
+                  radial-gradient(farthest-side at top right,rgba(238, 34, 153, 0.945),rgb(94, 13, 83), transparent),
+                  radial-gradient(farthest-side at 10% 80%,rgba(255, 255, 0, 0.87),rgb(94, 13, 83), transparent);
+      
+      background-size:200%;
+      background-repeat: no-repeat;
+      background-position: 50% 40%;
+  }
+  }
+
+  .up{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+
+    .link-insta{
+      text-decoration: none;
+      color: goldenrod;
+      &:hover{
+        transform: scale(1.2);
+        margin-left: 10px;
+        transition: all 1s ease;
+      }
+    }
+    .link-tickets{
+      background-color: white;
+      color: #440d3f;
+      padding-left: 10px;
+      padding-right: 10px;
+      margin: 15px;
+      text-decoration: none;
+      &:hover{
+        transform: scale(1.2);
+        margin-left: 20px;
+        margin-right: 20px;
+        transition: all 1s ease;
+      }
+    }
+    .link-twit{
+      text-decoration: none;
+      color: green;
+      &:hover{
+        transform: scale(1.2);
+        margin-right: 10px;
+        transition: all 1s ease;
+      }
+    }
+
+  }
+
+  .App-logo {
+    height: 50vmin;
+    pointer-events: none;
+
+    @include mobile{
+      width: 250px;
+      height: 250px;
+    }
+  }
+
+}
+
+.App-deg1{
+  height: 100%;
+  z-index: 2;
+}
+.App-deg2{
+  height: 100%;
+}
+.App-lights{
+  //position: absolute;
+  width: 100%;
+}
+a{
+  font-weight: bold;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 16vh;
+  font-size: calc(10px + 2vmin);
+  height: 100vh;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin: auto;
+
+  @include mobile{
+    padding-top: 20vh;
+  }
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
